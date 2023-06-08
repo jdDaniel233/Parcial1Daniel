@@ -19,6 +19,7 @@ public class BDHelper extends SQLiteOpenHelper {
                 "usu_area text NOT NULL,"+
                 "usu_cargo text NOT NULL,"+
                 "usu_hijos integer NOT NULL," +
+                "usu_sueldo text NOT NULL," +
                 "usu_estado integer NOT NULL)");
 
 
