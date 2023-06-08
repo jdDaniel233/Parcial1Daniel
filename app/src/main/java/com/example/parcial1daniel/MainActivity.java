@@ -13,7 +13,7 @@ import android.widget.Toast;
 import bdd.BDHelper;
 
 public class MainActivity extends AppCompatActivity {
-    EditText et_funcionario,et_area,et_cargo,et_hijos,et_estado,et_sueldo,et_horas;
+    EditText et_funcionario,et_area,et_cargo,et_hijos,et_estado,et_atrasos,et_horas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         et_cargo=findViewById(R.id.txtCargo);
         et_hijos=findViewById(R.id.txtHijos);
         et_estado=findViewById(R.id.txtEstado);
+        et_atrasos=findViewById(R.id.txtAtrasos);
     }
 
     public void registrar(View view){
@@ -56,10 +57,18 @@ public class MainActivity extends AppCompatActivity {
 
             int numHijos = Integer.parseInt(hijos);
             double subsidioHijos = 50.0 * numHijos;
-            double descuentoAtrasos = -0.08 * sueldo;
+            //double descuentoAtrasos = -0.08 * sueldo;
             double horasExtras = 12.0;
+            String atrasos = et_atrasos.getText().toString();
+            boolean tieneAtrasos = atrasos.equalsIgnoreCase("sí");
 
-            sueldo = sueldo + subsidioHijos - Math.abs(descuentoAtrasos) + horasExtras;
+            double descuentoAtrasos = 0.0;
+            if (tieneAtrasos) {
+                descuentoAtrasos = -0.08 * sueldo;
+            }
+
+            //sueldo = sueldo + subsidioHijos - Math.abs(descuentoAtrasos) + horasExtras;
+            sueldo = sueldo + subsidioHijos + descuentoAtrasos + horasExtras;
             TextView tvSueldo = findViewById(R.id.txtSueldo);
             tvSueldo.setText("Sueldo: $" + sueldo);
 
