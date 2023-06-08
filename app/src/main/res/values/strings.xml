@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Parcial1Daniel</string>
+    <string name="txtFuncionarios"> </string>
+    <string name="txtCargo"> </string>
+    <string name="txtHijos"> </string>
+    <string name="txtEstado"> </string>
+    <string name="txtAtrasos"> </string>
+    <string name="txtHoras"> </string>
+    <string name="txtSueldo"> </string>
+
 </resources>
