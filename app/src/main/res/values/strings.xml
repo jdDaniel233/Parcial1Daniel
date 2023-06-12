@@ -8,5 +8,6 @@
     <string name="txtAtrasos"> </string>
     <string name="txtHoras"> </string>
     <string name="txtSueldo"> </string>
+    <string name="txtDescuentoA"> </string>
 
 </resources>
